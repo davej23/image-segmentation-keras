@@ -69,6 +69,7 @@ def get_segmentation_model(input, output):
     img_input = input
     o = output
     o = UpSampling2D(size=(2,2))(o)
+    o = Convolution2D(1,1, padding='same')(o)
     o = Activation('sigmoid')(o)
     model = Model(img_input, o)
 
