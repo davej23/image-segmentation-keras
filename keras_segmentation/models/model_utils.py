@@ -72,9 +72,4 @@ def get_segmentation_model(input, output):
     o = (Activation('sigmoid'))(o)
     model = Model(img_input, o)
 
-    model.train = MethodType(train, model)
-    model.predict_segmentation = MethodType(predict, model)
-    model.predict_multiple = MethodType(predict_multiple, model)
-    model.evaluate_segmentation = MethodType(evaluate, model)
-
     return model
